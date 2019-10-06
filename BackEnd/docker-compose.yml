@@ -1,0 +1,89 @@
+version: '2.3'
+services:
+  # container for storing the data 
+  elasticsearch:
+    image: elasticsearch:7.1.0
+    # restarts automatically if it fails
+    restart: on-failure
+    # assigned into the network that other container can access it 
+    networks:
+      - nod-newscrawler
+    # maps the port 9200 to 9200 so its accessable for others
+    ports:
+      - 9200:9200
+    # checks if elasticsearch is still working properly
+    healthcheck:
+        test: ["CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health || exit 1"]
+        interval: 1m
+        timeout: 30s
+        retries: 3
+    # sets environment variables for elasticsearch
+    environment:
+      # sets the size 
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      # runs in single-node mode
+      - discovery.type=single-node
+      # sets the node names
+      - node.name=elasticsearch_node
+      # enables the elasticsearch to be extend some storage limits
+      - bootstrap.memory_lock=false
+      # enables to send requests without cors issues
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
+    # saves the data external 
+    volumes:
+      - ${PWD}/elasticsearch-data:/usr/share/elasticsearch/data
+  
+  # Kibana image to use some additional tools during development
+  # kibana:
+  #   image: kibana:7.1.0
+  #   networks:
+  #     - nod-newscrawler
+  #   ports:
+  #     - 5601:5601
+  #   environment:
+  #     - ELASTICSEARCH_URL=http://elasticsearch:9200
+  
+  # the crawler image provieded by the Department of Language technology University of Hamburg
+  crawler:
+    image: uhhlt/newscrawler
+    restart: on-failure
+    networks:
+      - nod-newscrawler
+    volumes:
+      - ${PWD}/out:/app/out
+    environment:
+      - ELASTIC_URL=http://elasticsearch:9200
+      - ELASTIC_USER=elastic
+      - ELASTIC_PASSWORD=secret
+      - CRAWLER_FEEDS_FILE=/app/data/feeds_en.txt
+      - CRAWLER_LANGUAGE=english
+      - CRAWLER_TIMEZONE=Europe/Berlin
+  
+  # the classifier image works in combinanation of elasticsearch and the crawler image
+  # the crawled articles will be loaded / classified / pushed to elasticSearch
+  classifier: 
+    image: classifier:latest 
+    restart: on-failure
+    networks:
+      - nod-newscrawler
+    volumes: 
+      - ${PWD}/out:/app/out
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+  
+  # Flask connects the frontend with the backend so that the REST-Calls reponds
+  flask:
+      image: flask-server:latest
+      restart: always
+      networks:
+        - nod-newscrawler
+      ports:
+        - 5000:80
+      volumes:
+        - .:/code
+      environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+  
+networks:
+    nod-newscrawler:

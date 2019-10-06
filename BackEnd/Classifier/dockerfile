@@ -1,0 +1,19 @@
+FROM ubuntu:19.04
+
+# install apt-get to install pip later on
+RUN apt-get update -y
+
+# install python3 - pip / dev / essential / cron / curl
+RUN apt-get install -y python3-pip python3-dev build-essential cron curl
+
+# Copy the current directory contents into the container at /
+COPY . /root
+
+# uses the installed pip3 to install the requirements for the container
+RUN pip3 install -r /root/requirements.txt
+
+# gives execution rights to the files 
+RUN chmod +x /root/entrypoint.sh /root/loadFromElastic.py /root/pushToElastic.py /root/classifier.py /root/data_files/data.csv /root/data_files/labeled_data.csv /root/trained_model/model.h5 /root/trained_model/model.json
+
+# runs the file while starting the container
+ENTRYPOINT /root/entrypoint.sh

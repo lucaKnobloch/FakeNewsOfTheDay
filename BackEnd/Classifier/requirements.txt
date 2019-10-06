@@ -1,0 +1,7 @@
+pandas
+numpy
+elasticsearch
+datetime
+spacy
+keras
+tensorflow
