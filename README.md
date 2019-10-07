@@ -1,37 +1,68 @@
-## Welcome to GitHub Pages
+# FakeNewsTrackerOfTheDay
 
-You can use the [editor on GitHub](https://github.com/lucaKnobloch/FakeNewsOfTheDay/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+The FakeNewsTracker will used crawled classified data to extract their main message and visualize them.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Docker Compose
 
-### Markdown
+1. `git clone https://github.com/lucaKnobloch/FakeNewsOfTheDay.git`
+2. `cd FakeNewsOfTheDay`
+3. `docker-compose up`
+4. `open localhost:8080`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This will pull and run 6 containers:
+    Elasticsearch
+    Kibana
+    News-Crawler
+    fakenod-back
+    fakenod-front
+    fakenod-con
 
-```markdown
-Syntax highlighted code block
+## Build Docker locally
 
-# Header 1
-## Header 2
-### Header 3
+### The containers of fakenod can be build locally. The following steps explain how
 
-- Bulleted
-- List
+1. Container fakenod-back
+    go to the directory Classifier
+        `./BackEnd/Classifier`
+    run the command
+        `docker build . -t fakenod-back:latest`
 
-1. Numbered
-2. List
+    -> builded the container fakenod-back
+        - further information are located here
 
-**Bold** and _Italic_ and `Code` text
+2. Container Connection Server
+    go to the directory flaskServer
+        `./BackEnd/flaskServer`
+    run the command
+        `docker build . -t fakenod-con:latest`
 
-[Link](url) and ![Image](src)
-```
+    -> builded the container fakenod-con
+        -   further information are located here
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+3. Container fakenod-front
+    go to the directory FrontEnd
+        `./FrontEnd`
+    run the command
+        `docker build . -t fakenod-front:latest`
 
-### Jekyll Themes
+    -> builded the container fakenod-front
+        - further information are located here
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lucaKnobloch/FakeNewsOfTheDay/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    After building these 3 containers they are usable with a docker-compose command in the root directory
+        `docker-compose-local up`
 
-### Support or Contact
+    Either if the pulled containers or the local containers are used the docker-compose file will pull the following containers:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+4. Container News scrawler
+    is pulled from uhhlt/newscrawler
+    in general it feeds on a daily basis news articles which are customizable. 
+    in this application english articles are feeded and once a day scraped with the whole article stored into elasticsearch
+    further information can be find on the origin project:
+    https://github.com/uhh-lt/news-crawler
+
+5. Container ElasticSearch
+    is pulled from elasticsearch:7.1.1
+    is used for storage and search for the data
+
+6. Container Kibana
+    for develop purposes in combination with elasticsearch
