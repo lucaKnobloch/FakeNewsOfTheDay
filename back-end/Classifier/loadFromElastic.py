@@ -13,7 +13,7 @@ def connect_elasticsearch():
 	with open("./config.json") as config_file:
 		config = json.load(config_file)
 
-	_es = Elasticsearch(config['prod'] + ':9200')
+	_es = Elasticsearch(config['dev'] + ':9200')
 	# returns that the connection is working
 	if _es.ping():
 		print('Yay Connect')
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     	# 		}
   		# 	}
 		# }
-		search_object={'query':{'match_phrase':{'published':SEARCH_DAY}}}
+		search_object={"size": 1000,"query":{"match_phrase":{"published":SEARCH_DAY}}}
 		# do the actual search with converting the body in the json format
 		rs = search(es, 'news-english', json.dumps(search_object))
 		rows = []

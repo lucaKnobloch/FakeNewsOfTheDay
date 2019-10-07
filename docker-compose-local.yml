@@ -63,7 +63,7 @@ services:
   # the classifier image works in combinanation of elasticsearch and the crawler image
   # the crawled articles will be loaded / classified / pushed to elasticSearch
   classifier: 
-    image: buecherwurm/fakenod-back:latest
+    image: fakenod-back:latest
     restart: on-failure
     networks:
       - NOD
@@ -74,7 +74,7 @@ services:
   
   # Flask connects the frontend with the backend so that the REST-Calls reponds
   flask:
-      image: buecherwurm/fakenod-con:latest
+      image: fakenod-con:latest
       restart: always
       networks:
         - NOD
@@ -86,7 +86,7 @@ services:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
 
   frontend:
-      image: buecherwurm/fakenod-front:latest
+      image: fakenod-front:latest
       networks:
         - NOD
       restart: on-failure

@@ -4,7 +4,7 @@
 ```
 npm install
 ```
-
+ -> build a local docker container which enables to visualize the frontend
 ### Compiles and hot-reloads for development
 ```
 npm run serve
