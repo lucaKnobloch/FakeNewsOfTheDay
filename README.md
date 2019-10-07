@@ -10,39 +10,40 @@ The FakeNewsTracker will used crawled classified data to extract their main mess
 4. `open localhost:8080`
 
 This will pull and run 6 containers:
-    Elasticsearch
-    Kibana
-    News-Crawler
-    fakenod-back
-    fakenod-front
-    fakenod-con
+
+- Elasticsearch
+- Kibana
+- News-Crawler
+- fakenod-back
+- fakenod-front
+- fakenod-con
 
 ## Build Docker locally
 
 ### The containers of fakenod can be build locally. The following steps explain how
 
 1. Container fakenod-back
-    go to the directory Classifier
+    - go to the directory Classifier
         `./BackEnd/Classifier`
-    run the command
+    - run the command
         `docker build . -t fakenod-back:latest`
 
     -> builded the container fakenod-back
         - further information are located here
 
 2. Container Connection Server
-    go to the directory flaskServer
+    - go to the directory flaskServer
         `./BackEnd/flaskServer`
-    run the command
+    - run the command
         `docker build . -t fakenod-con:latest`
 
     -> builded the container fakenod-con
         -   further information are located here
 
 3. Container fakenod-front
-    go to the directory FrontEnd
+    - go to the directory FrontEnd
         `./FrontEnd`
-    run the command
+    - run the command
         `docker build . -t fakenod-front:latest`
 
     -> builded the container fakenod-front
@@ -50,6 +51,8 @@ This will pull and run 6 containers:
 
     After building these 3 containers they are usable with a docker-compose command in the root directory
         `docker-compose-local up`
+
+### Furhter pulled containers
 
     Either if the pulled containers or the local containers are used the docker-compose file will pull the following containers:
 
