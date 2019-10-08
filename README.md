@@ -87,6 +87,8 @@ Either if the pulled containers or the local containers are used the docker-comp
 
     The 6. container is pulled from kibana:7.1.0 from the docker hub. It is used for development purposes and simplifies to get insight over the data in elastic search.
 
+A second branch called "providedData" provides addional crawled data, which can be fed in elastic search.
+
 An example picture of the working front-end
 
 ![Overview](./docs/pictures/Overview.png)
