@@ -1,6 +1,6 @@
 # FakeNewsTrackerOfTheDay
 
-The FakeNewsTracker will used crawled classified data to extract their main message and visualize them.
+The FakeNewsTracker will use crawled classified data to extract their main message and visualize them.
 
 Further information can be find here: [Documentation of this project](./docs/UserGuide.md) or here
 <https://lucaknobloch.github.io/FakeNewsOfTheDay/>
@@ -34,7 +34,7 @@ This will pull and run 6 containers:
 
         `docker build . -t fakenod-back:latest`
 
-    -> builded the container fakenod-back
+    -> built the container fakenod-back
         - further information are located here
     The docker image for this is located here [DockerHub](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-back)
 
@@ -46,7 +46,7 @@ This will pull and run 6 containers:
 
         `docker build . -t fakenod-con:latest`
 
-    -> builded the container fakenod-con
+    -> built the container fakenod-con
         -   further information are located here
     The docker image for this is located here [DockerHub](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-con)
 
@@ -58,7 +58,7 @@ This will pull and run 6 containers:
 
         `docker build . -t fakenod-front:latest`
 
-    -> builded the container fakenod-front
+    -> built the container fakenod-front
         - further information are located here
 
     The docker image for this is located here [DockerHub](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-front)
@@ -74,25 +74,24 @@ Either if the pulled containers or the local containers are used the docker-comp
 4. Container News scrawler
 
     The container is pulled from uhhlt/newscrawler dockerhub.
-    In general it feeds on a daily basis news articles and scrape them into elasticSearch.
-    In this context english articles are hourly feeded and once a day scraped which contain the whole article. Those information will be stored in Elasticsearch.
+    In general, it feeds daily news articles and scrapes them into elastic search.
+    In this context english articles are hourly fed and once a day scraped which contain the whole article. That information will be stored in Elasticsearch.
 
-    Further information can be find on the origin project: <https://github.com/uhh-lt/news-crawler>
+    Further information can be found on the origin project: <https://github.com/uhh-lt/news-crawler>
 
 5. Container ElasticSearch
 
-   The 5. container is pulled from elasticsearch:7.1.0 from the dockerhub. It is used to for storage and for search within the data.
+   The 5. container is pulled from elasticsearch:7.1.0 from the docker hub. It is used for storage and searches within the data.
 
 6. Container Kibana
 
-    The 6. container is pulled from kibana:7.1.0 from the dockerhub. It is used for development purposes and simplifices to get insight over the data in elasticsearch.
+    The 6. container is pulled from kibana:7.1.0 from the docker hub. It is used for development purposes and simplifies to get insight over the data in elastic search.
 
 An example picture of the working front-end
 
 ![Overview](./docs/pictures/Overview.png)
 
-Some ideas for further improvements are already open in the issue section. Further ideas are cordially
- welcome!
+Some ideas for further improvements are already open in the issue section. Further ideas are cordially welcome!
 
 * <https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/1>
 * <https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/2>
