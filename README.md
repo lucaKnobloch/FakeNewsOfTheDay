@@ -24,7 +24,7 @@ This will pull and run 6 containers:
 
 1. Container fakenod-back
     - go to the directory Classifier
-        `./BackEnd/Classifier`
+        `./back-end/Classifier`
     - run the command
         `docker build . -t fakenod-back:latest`
 
@@ -33,7 +33,7 @@ This will pull and run 6 containers:
 
 2. Container Connection Server
     - go to the directory flaskServer
-        `./BackEnd/flaskServer`
+        `./back-end/flaskServer`
     - run the command
         `docker build . -t fakenod-con:latest`
 
@@ -42,7 +42,7 @@ This will pull and run 6 containers:
 
 3. Container fakenod-front
     - go to the directory FrontEnd
-        `./FrontEnd`
+        `./front-end`
     - run the command
         `docker build . -t fakenod-front:latest`
 
@@ -52,9 +52,9 @@ This will pull and run 6 containers:
     After building these 3 containers they are usable with a docker-compose command in the root directory
         `docker-compose-local up`
 
-### Furhter pulled containers
+### Further pulled containers
 
-    Either if the pulled containers or the local containers are used the docker-compose file will pull the following containers:
+Either if the pulled containers or the local containers are used the docker-compose file will pull the following containers:
 
 4. Container News scrawler
     is pulled from uhhlt/newscrawler
