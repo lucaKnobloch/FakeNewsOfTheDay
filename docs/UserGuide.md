@@ -27,3 +27,5 @@ The main focus of the project was to create a pipeline to fulfill the following 
 For more information about the [Pipeline](./PipeLine.md)
 
 For more information about the [Usage of the front-end](./Front-end-user-guide.md)
+
+For more information about the [Technologie Guide](./TechnologieGuide.md)
