@@ -1,6 +1,6 @@
 # The Pipeline
 
-![Image description](link-to-image)
+![Image description](./PipLine.md)
 
 This model of the pipeline visualize once more what the steps are. In the following each step is introduced.
 
