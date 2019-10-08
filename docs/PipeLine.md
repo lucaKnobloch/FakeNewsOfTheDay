@@ -1,6 +1,6 @@
 # The Pipeline
 
-![Visualization of the Pipeline](.pictures/PipeLine.png)
+![Visualization of the Pipeline](./pictures/PipeLine.png)
 
 This model of the pipeline visualize once more what the steps are. In the following each step is introduced.
 
@@ -54,5 +54,6 @@ After extracting each entity are counted in terms of how often they occur in the
 When this step is finsihed the three most common entites are saved with 15 chars before and after the occurance in the text. So that later in the visulalization tool the occurance can give an first indicator what is the context of that entity.
 
 4. ## Visualization
+
 The generated information needs to be edit that the end-user can get insights. The entites are visualized in a force-directed graph. This graph is catching the eye of the user and increases the user-experince. Each entity is shown as a node and each entity of the same article are connected vie edge.
 In general are two graphs visible to represent the difference between the binary classified articles. The nodes can be selected and give further information about the occurance of the entity and lead by further intrest to the origin article.

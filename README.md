@@ -2,7 +2,7 @@
 
 The FakeNewsTracker will used crawled classified data to extract their main message and visualize them.
 
-click here for further documentation[Documentation of this proect](./docs/UserGuide.md)
+Further information can be find here: [Documentation of this project](./docs/UserGuide.md)
 
 ## Docker Compose
 
@@ -38,8 +38,10 @@ This will pull and run 6 containers:
 
 2. Container Connection Server
     - go to the directory flaskServer
+
         `./back-end/flaskServer`
     - run the command
+
         `docker build . -t fakenod-con:latest`
 
     -> builded the container fakenod-con
@@ -47,14 +49,17 @@ This will pull and run 6 containers:
 
 3. Container fakenod-front
     - go to the directory FrontEnd
+
         `./front-end`
     - run the command
+
         `docker build . -t fakenod-front:latest`
 
     -> builded the container fakenod-front
         - further information are located here
 
     After building these 3 containers they are usable with a docker-compose command in the root directory
+
         `docker-compose-local up`
 
 ### Further pulled containers
@@ -64,13 +69,10 @@ Either if the pulled containers or the local containers are used the docker-comp
 4. Container News scrawler
 
     The container is pulled from uhhlt/newscrawler dockerhub.
-    In general it feeds on a daily basis news articles and scrape them into elasticSearch
-
+    In general it feeds on a daily basis news articles and scrape them into elasticSearch.
     In this context english articles are hourly feeded and once a day scraped which contain the whole article. Those information will be stored in Elasticsearch.
 
-    Further information can be find on the origin project:
-
-    <https://github.com/uhh-lt/news-crawler>
+    Further information can be find on the origin project: <https://github.com/uhh-lt/news-crawler>
 
 5. Container ElasticSearch
 
