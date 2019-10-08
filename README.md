@@ -2,7 +2,8 @@
 
 The FakeNewsTracker will used crawled classified data to extract their main message and visualize them.
 
-Further information can be find here: [Documentation of this project](./docs/UserGuide.md)
+Further information can be find here: [Documentation of this project](./docs/UserGuide.md) or here
+<https://lucaknobloch.github.io/FakeNewsOfTheDay/>
 
 ## Docker Compose
 
@@ -87,4 +88,8 @@ An example picture of the working front-end
 ![Overview](./docs/pictures/Overview.png)
 
 Some ideas for further improvements are already open in the issue section. Further ideas are cordially
- welcome! [Issue#1]<https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/1> [Issue#2]<https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/2> [Issues#3]<https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/3>
+ welcome!
+
+* <https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/1>
+* <https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/2>
+* <https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/3>

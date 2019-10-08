@@ -209,6 +209,7 @@ The user can change the directory by:
 Running the command:
 `python3 loadFromElastic.py`
 will download the articles which are taged with the date of yesterday. The data is saved within the datafiles - data.csv
+Warning: The file loadFromElastic.py has an hyperparamter which is automatically produced to retrieves the articles of yesterday. If the file is used for other porpuses, the parameter needs to be adjusted to get the data which is wanted.
 
 `python3 classifier.py`
 will binary classify the data which are loaded from the file - data.csv. The trained model will be loaded from the folder trained_model. The classified data will be saved into the file labeled_data.csv
@@ -220,4 +221,6 @@ The used frameworks for the classification model is Keras and Tensorflow. The Na
 
 ## front-end
 
-The front-end is build in the VueJs. 
+The front-end is build in the VueJs. This language increases their popularity with the attributes of easy to get started, with an flexible strucute and generates a smooth development feeling.
+
+How to use the frontend can be find here [Front-end Documentation](./front-end/README.md)
