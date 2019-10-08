@@ -4,7 +4,7 @@
 
 This model of the pipeline visualize once more what the steps are. In the following each step is introduced.
 
-1. ## Crawling news on a daily basis**
+1. ## Crawling news on a daily basis
 
 This step is adopted by the tool of the Universtiy of Hamburg Languagte technology group and is called the "News-Crawler"
 

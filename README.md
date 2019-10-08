@@ -60,7 +60,7 @@ This will pull and run 6 containers:
 
     After building these 3 containers they are usable with a docker-compose command in the root directory
 
-        `docker-compose-local up`
+    `docker-compose-local up`
 
 ### Further pulled containers
 
@@ -84,7 +84,7 @@ Either if the pulled containers or the local containers are used the docker-comp
 
 An example picture of the working front-end
 
-[Overview](./pictures/Overview.png)
+![Overview](./pictures/Overview.png)
 
 Some ideas for further improvements are already open in the issue section. Further ideas are cordially
  welcome! [#1] [#2] [#3]
