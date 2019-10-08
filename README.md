@@ -81,3 +81,10 @@ Either if the pulled containers or the local containers are used the docker-comp
 6. Container Kibana
 
     The 6. container is pulled from kibana:7.1.0 from the dockerhub. It is used for development purposes and simplifices to get insight over the data in elasticsearch.
+
+An example picture of the working front-end
+
+[Overview](./pictures/Overview.png)
+
+Some ideas for further improvements are already open in the issue section. Further ideas are cordially
+ welcome! [#1] [#2] [#3]

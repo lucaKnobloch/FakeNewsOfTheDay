@@ -24,12 +24,6 @@ The main focus of the project was to create a pipeline to fullfill the following
 3. Extract the main information
 4. Visualization to provide it to the end-user
 
-For more information about the [Further information of the Pipeline](./PipeLine.md)
+For more information about the [Pipeline](./PipeLine.md)
 
-An example picture of the working front-end
-
-[Overview](./pictures/Overview.png)
-
-Some ideas for further improvements are already open in the issue section. Further ideas are cordially
- welcome! [#1] [#2] [#3]
-
+For more information about the [Usage of the front-end](./Front-end-user-guide.md)
