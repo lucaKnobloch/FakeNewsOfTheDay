@@ -84,7 +84,8 @@ services:
         - .:/code
       environment:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
-
+  
+  # the viualization is done with vue and is build in this container
   frontend:
       image: buecherwurm/fakenod-front:latest
       networks:

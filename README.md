@@ -84,7 +84,7 @@ Either if the pulled containers or the local containers are used the docker-comp
 
 An example picture of the working front-end
 
-![Overview](./pictures/Overview.png)
+![Overview](./docs/pictures/Overview.png)
 
 Some ideas for further improvements are already open in the issue section. Further ideas are cordially
- welcome! [#1] [#2] [#3]
+ welcome! [Issue#1]<https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/1> [Issue#2]<https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/2> [Issues#3]<https://github.com/lucaKnobloch/FakeNewsOfTheDay/issues/3>

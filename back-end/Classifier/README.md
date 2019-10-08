@@ -1,1 +1,0 @@
--> build a local docker container which is able to load data from ElasticSearch - Classifiy - NER - push data back 
