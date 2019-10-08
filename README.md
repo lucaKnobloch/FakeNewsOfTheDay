@@ -36,6 +36,7 @@ This will pull and run 6 containers:
 
     -> builded the container fakenod-back
         - further information are located here
+    The docker image for this is located here [DockerHub](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-back)
 
 2. Container Connection Server
     - go to the directory flaskServer
@@ -47,6 +48,7 @@ This will pull and run 6 containers:
 
     -> builded the container fakenod-con
         -   further information are located here
+    The docker image for this is located here [DockerHub](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-con)
 
 3. Container fakenod-front
     - go to the directory FrontEnd
@@ -58,6 +60,8 @@ This will pull and run 6 containers:
 
     -> builded the container fakenod-front
         - further information are located here
+
+    The docker image for this is located here [DockerHub](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-front)
 
     After building these 3 containers they are usable with a docker-compose command in the root directory
 

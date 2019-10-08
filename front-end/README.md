@@ -18,5 +18,7 @@ npm run serve
 ```
 npm run build
 ```
-The build process creates a dist folder which will be used to deploy within the docker container.
 
+The build process creates a dist folder which will be used to deploy within the docker container. The dist folder should be deleted before a new build is triggered.
+
+The docker container which is build uses as the base a combination of node in which all the depencies and the dist folder is build. After successfully building this folder an nginx images is used to set up the production mode for the front-end.
