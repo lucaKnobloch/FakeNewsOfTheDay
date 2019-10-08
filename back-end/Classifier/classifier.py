@@ -14,6 +14,7 @@ print(dataset.shape)
 texts=dataset['text']
 label=dataset['label']
 
+# preprocessing steps to clean up the content of the article
 def striphtml(html):
     p = re.compile(r'<.*?>')
     return p.sub('', html)
@@ -29,7 +30,6 @@ txt=''
 
 # clean the sentences before feeding in the model
 for statement in (texts):
-    # TODO more preprocessing steps
     sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', clean(striphtml(statement)))
     sentences = [sent.lower() for sent in sentences]
     docs_test.append(sentences)
@@ -40,7 +40,6 @@ for doc in docs_test:
     for s in doc:
         txt += s
 
-# set up the chars from the 
 chars = set(txt)
 print('total chars:', len(chars))
 char_indices = dict((c, i) for i, c in enumerate(chars))

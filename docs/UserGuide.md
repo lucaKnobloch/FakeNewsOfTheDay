@@ -22,4 +22,4 @@ The main focus of the project was to create a pipeline to fullfill the following
 3. Extract the main information
 4. Visualization to provide it to the end-user
 
-For more information about the pipeline click here
+For more information about the [Further information of the PipeLine](/PipeLine.md)

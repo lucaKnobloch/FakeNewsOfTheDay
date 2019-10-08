@@ -2,6 +2,8 @@
 
 The FakeNewsTracker will used crawled classified data to extract their main message and visualize them.
 
+click here for further documentation[Documentation of this proect](./docs/UserGuide.md)
+
 ## Docker Compose
 
 1. `git clone https://github.com/lucaKnobloch/FakeNewsOfTheDay.git`
@@ -20,12 +22,15 @@ This will pull and run 6 containers:
 
 ## Build Docker locally
 
-### The containers of fakenod can be build locally. The following steps explain how
+**The containers of fakenod are locally buildable and the following steps explain how**
 
 1. Container fakenod-back
     - go to the directory Classifier
+
         `./back-end/Classifier`
+
     - run the command
+
         `docker build . -t fakenod-back:latest`
 
     -> builded the container fakenod-back
@@ -57,15 +62,20 @@ This will pull and run 6 containers:
 Either if the pulled containers or the local containers are used the docker-compose file will pull the following containers:
 
 4. Container News scrawler
-    is pulled from uhhlt/newscrawler
-    in general it feeds on a daily basis news articles which are customizable. 
-    in this application english articles are feeded and once a day scraped with the whole article stored into elasticsearch
-    further information can be find on the origin project:
-    https://github.com/uhh-lt/news-crawler
+
+    The container is pulled from uhhlt/newscrawler dockerhub.
+    In general it feeds on a daily basis news articles and scrape them into elasticSearch
+
+    In this context english articles are hourly feeded and once a day scraped which contain the whole article. Those information will be stored in Elasticsearch.
+
+    Further information can be find on the origin project:
+
+    <https://github.com/uhh-lt/news-crawler>
 
 5. Container ElasticSearch
-    is pulled from elasticsearch:7.1.0
-    is used for storage and search for the data
+
+   The 5. container is pulled from elasticsearch:7.1.0 from the dockerhub. It is used to for storage and for search within the data.
 
 6. Container Kibana
-    for develop purposes in combination with elasticsearch
+
+    The 6. container is pulled from kibana:7.1.0 from the dockerhub. It is used for development purposes and simplifices to get insight over the data in elasticsearch.
