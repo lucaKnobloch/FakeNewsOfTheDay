@@ -64,7 +64,7 @@ This will pull and run 6 containers:
     https://github.com/uhh-lt/news-crawler
 
 5. Container ElasticSearch
-    is pulled from elasticsearch:7.1.1
+    is pulled from elasticsearch:7.1.0
     is used for storage and search for the data
 
 6. Container Kibana
