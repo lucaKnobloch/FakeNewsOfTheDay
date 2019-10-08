@@ -2,7 +2,7 @@
 
 The Fake News Tracker Of The day crawls, classifies, abstract and visualizes the data.
 
-Further documentation is located here: [Documentation of this project](./docs/UserGuide.md) or is provided in that online resource. <https://lucaknobloch.github.io/FakeNewsOfTheDay/>
+Further documentation is located here: [Documentation of this project](./docs/UserGuide.md) or is provided in that online resource. <https://lucaknobloch.github.io/FakeNewsOfTheDay/docs/UserGuide.html>
 
 ## Docker Compose
 
