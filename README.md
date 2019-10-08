@@ -1,9 +1,8 @@
 # FakeNewsTrackerOfTheDay
 
-The FakeNewsTracker will use crawled classified data to extract their main message and visualize them.
+The Fake News Tracker Of The day crawls, classifies, abstract and visualizes the data.
 
-Further information can be find here: [Documentation of this project](./docs/UserGuide.md) or here
-<https://lucaknobloch.github.io/FakeNewsOfTheDay/>
+Further documentation is located here: [Documentation of this project](./docs/UserGuide.md) or is provided in that online resource. <https://lucaknobloch.github.io/FakeNewsOfTheDay/>
 
 ## Docker Compose
 
@@ -35,7 +34,8 @@ This will pull and run 6 containers:
         `docker build . -t fakenod-back:latest`
 
     -> built the container fakenod-back
-        - further information are located here
+        - further information are located here [Technologie Guide](./docs/TechnologieGuide.md)
+
     The docker image for this is located here [DockerHub -  Back](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-back)
 
 2. Container Connection Server
@@ -47,7 +47,8 @@ This will pull and run 6 containers:
         `docker build . -t fakenod-con:latest`
 
     -> built the container fakenod-con
-        -   further information are located here
+        -   further information are located here [Technologie Guide](./docs/TechnologieGuide.md)
+
     The docker image for this is located here [DockerHub - Con](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-con)
 
 3. Container fakenod-front
@@ -59,37 +60,38 @@ This will pull and run 6 containers:
         `docker build . -t fakenod-front:latest`
 
     -> built the container fakenod-front
-        - further information are located here
+        - further information are located here [Technologie Guide](./docs/TechnologieGuide.md)
 
     The docker image for this is located here [DockerHub - Front](https://cloud.docker.com/repository/docker/buecherwurm/fakenod-front)
 
-    After building these 3 containers they are usable with a docker-compose command in the root directory
+    After building these 3 containers locally they are usable with a docker-compose command in the root directory.
 
     `docker-compose-local up`
 
 ### Further pulled containers
 
-Either if the pulled containers or the local containers are used the docker-compose file will pull the following containers:
+Either of the docker-compose file will pull the following containers: 
 
 4. Container News scrawler
 
-    The container is pulled from uhhlt/newscrawler dockerhub.
+    The container is pulled from uhhlt/newscrawler [dockerhub](https://hub.docker.com/r/uhhlt/newscrawler).
+
     In general, it feeds daily news articles and scrapes them into elastic search.
-    In this context english articles are hourly fed and once a day scraped which contain the whole article. That information will be stored in Elasticsearch.
+    In the context of the FakeNews project, the English articles are hourly fed and once a day scraped which contain the whole article into elastic search as save it on local storage.
 
     Further information can be found on the origin project: <https://github.com/uhh-lt/news-crawler>
 
 5. Container ElasticSearch
 
-   The 5. container is pulled from elasticsearch:7.1.0 from the docker hub. It is used for storage and searches within the data.
+   The 5. container is pulled from elastic search:7.1.0 from the docker hub. It is used for storage and searches within the data.
 
 6. Container Kibana
 
     The 6. container is pulled from kibana:7.1.0 from the docker hub. It is used for development purposes and simplifies to get insight over the data in elastic search.
 
-A second branch called "providedData" provides addional crawled data, which can be fed in elastic search.
+A second branch called "providedData" provides additional crawled data, which can be fed in elastic search.
 
-An example picture of the working front-end
+An example screenshot of the working front-end with successfully complete the pipeline.
 
 ![Overview](./docs/pictures/Overview.png)
 

@@ -1,8 +1,8 @@
 # Technologies
 
-The introduces tools can also be used locally but come with additional dependencies so it is not recommended.
+The introduces tools can also be used locally but therefor additional dependencies are needed which are described in the requirements file.
 
-But still within the docker-containers can be looked and trigger processes manually.
+The more convenient idea is to have a look inside the docker container and trigger or manipulate files within there manually.
 
 ## ElasticSearch
 
@@ -191,9 +191,16 @@ The endpoint returns static elements which represents a successfull connection.
 The elasticCheck endpoint connects to the elastic search instance and returns the status. At the lower bound of the responds message, says responds ok, which means the connection was successful. A similar check can be done with the endpoint of:
 `localhost:5000/healthcheck`
 
+The search endpoint will be used the most. It represents the endpoint to search for the data.
+`POST localhost:5000/search/<date>/<label>`
+
+The parameter <date> needs to replaced by the date which is wanted and the <label> parameter is needed to be replaced by False or True.
+
 ## Classifier
 
-The classifier takes triggered by the cronjob which is configured in the entrypoint.sh file in combination with the docker file. The logs of the classifier can be seen within the docker container. The user needs to connect to the running container with the command:
+The classifier runs on with a cronjob which triggers different commands at different times. The cronjob is configured in a combination of the entrypoint.sh file and the docker file.
+The logs of the classifier are saved within the running docker container. The user sees them when the terminal is connected with the running docker container:
+
 `docker exec -it <name of the container> sh`
 
 The logs can be seen in the /var/logs folder. They are called:
@@ -202,9 +209,11 @@ The logs can be seen in the /var/logs folder. They are called:
 - classify.log
 - push.log
 
-The files which can be triggered within the docker container are located at /root location.
+The files which are triggered by the cronjob are located in the /root directory.
 The user can change the directory by:
 `cd /root`
+
+The following three files can be executed.
 
 Running the command:
 `python3 loadFromElastic.py`
@@ -221,6 +230,6 @@ The used frameworks for the classification model is Keras and Tensorflow. The Na
 
 ## front-end
 
-The front-end is built in the VueJs. This language increases their popularity with the attributes of easy to get started, with a flexible structure and generates a smooth development feeling.
+The front-end is built in the VueJs. This language is used because of their attributes to easy getting started, with a flexible structure and generates a smooth development feeling.
 
 How to use the frontend can be found here [Front-end Documentation](./front-end/README.md)

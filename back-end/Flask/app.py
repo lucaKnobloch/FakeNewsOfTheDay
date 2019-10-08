@@ -41,7 +41,7 @@ def search(date, label):
 	elif request.method == "POST": # The actual request following the preflight
 		print(date)
 		body = {
-			"size": 30,
+			"size": 500,
 			"query": {
 				"bool": {
 				"must": [

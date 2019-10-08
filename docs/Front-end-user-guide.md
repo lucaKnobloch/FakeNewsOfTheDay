@@ -1,21 +1,21 @@
 # User Guide for the Website
 
-The successful finished [Pipeline](./PipeLine.md) results in the permanently visible visualization part. Which differs from the rest of the pipeline since it is running hourly or daily. The visualization is always visible and reachable but why is it within the pipeline? Since the data is pushed into elastic search daily it also can only be retrieved once a day by the frontend.
+The successful finished [Pipeline](./PipeLine.md) results in the permanently visible visualization part. Which differs from the rest of the pipeline since the pipeline is running hourly or daily. The visualization is always visible and reachable. But why is it represented within the pipeline? Since the data is pushed into elastic search daily it also can only be retrieved once a day by the frontend.
 
-The basis of this front-end is adapted by a project of Emilio Rizzo and his project vue-d3-network. The core of force-directed graphs is used by his project and is customized for the purposes of this project. The code basis is available on GitHub: <https://github.com/emiliorizzo/vue-d3-network>
+The basis of this front-end is adapted by a project of Emilio Rizzo and his project vue-d3-network. The core of force-directed graphs is used by his project and is customized to this project. The code basis is available on GitHub: <https://github.com/emiliorizzo/vue-d3-network>
 
 ![frontend](./pictures/Overview.png)
 
 ## DatePicker
 
-The Visualization represents all the entities which are crawled daily. In the middle of the page is shown which date is selected to represent graphs. This date is customizable and can be edit. Therefor a Datepicker is chosen which can be enabled by clicking on the input field of the date. After choosing a different date, different entities will be loaded.
+The Visualization represents all the entities which are crawled daily. In the middle of the page is shown which date is selected to represent graphs. This date is customizable and can be edit. Therefor a date picker is chosen which can be expanded by clicking on the input field of the date. After choosing a different date, different entities will be loaded.
 Warning: so far every date is possible to select but not every date has data. So if a selected date doesn't represent entities the data is most probably missing.
 
 ![DatePicker](./pictures/DatePicker.png)
 
 ## Disable Graphs
 
-The default settings are that the graph for fake and real news are visible at the same time. In that way, a comparison might be possible between both graphs. Additional offers this tool to select one graph to focus on it. The tool gives three options *Real*, *Combined* and *Fake*. If the user wants only to see the graph with the real classified entities, the Real button needs to be clicked. To focus on the fake graph the Fake button needs to be selected. It automatically disables the other option.
+The default settings are that the graph for fake and real news are visible at the same time. In that way, a comparison might be possible between both graphs. Additional this tool offers to select one graph to focus on it. The tool gives three options *Real*, *Combined* and *Fake*. If the user wants to see only the graph with the real classified entities, the Real button needs to be clicked. To focus on the fake graph the Fake button needs to be selected. It automatically disables the other graph.
 
 ![Disable Graphs](./pictures/DisableGraphs.png)
 
@@ -27,14 +27,13 @@ As mentioned in the pipeline information the visualization is supposed to show t
 
 ## Hover feature
 
-The user can hover over the edges and the color of the edge will change. This is supposed to improve the clearness in which entities belong to each other.
-The nodes changing the color as well when the user hovers over it.
+The user can hover over the edges and the color of the edge will change. This is supposed to improve the understanding of which entities belong to each other. The nodes changing the color as well when the user hovers over it.
 
 ![ColorChange](./pictures/Node.png)
 
 ## Selection
 
-When the user selects one node by clicking on it. An additional pop up appears. The selected node name is visible and the context of the word. Currently, are n chars before and after the entity occurrence within the article visible. It is supposed to give the user a first idea in which context the entity is used. In case the reader is interested in reading the original article the click for the article button can be clicked. This button will open an additional tab within the browser with the website of the article.
+When the user selects one node by clicking on it, an additional pop up appears. The selected node name is visible and the context of the word. Currently, are n chars before and n chars after the entity occurrence within the article visible. It is supposed to give the user a first idea in which context the entity is used. In case the reader is interested in reading the original article the *click for the article* button can be selected. This button will open an additional tab within the browser with the website of the article.
 
 Furthermore, are more than one node selectable. The list can be extended to several entities. The same pop-up window has the option to deselect the entity again. This function is represented by the red cross. The number of selected nodes and links are represented below the information. In case more entities are selected as there is space a list will be created so that the user can scroll down to see the other selections.
 At the same time as the entity is selected the color of the node is supposed to change to be represented as selected node.
