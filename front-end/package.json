@@ -9,7 +9,7 @@
     "build-component": "vue-cli-service build --target lib --name vue-d3-network src/vue-d3-network.vue"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "d3-force": "^2.0.1",
     "pug-loader": "^2.4.0",
