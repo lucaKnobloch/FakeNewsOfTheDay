@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "d3-force": "^2.0.1",
+    "d3-force": "^2.1.1",
     "pug-loader": "^2.4.0",
     "vue": "^2.6.11",
     "vuejs-datepicker": "^1.6.2",
