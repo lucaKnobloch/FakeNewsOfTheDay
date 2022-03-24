@@ -30,7 +30,7 @@
     "eslint": "^7.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "kind-of": ">=6.0.3",
-    "minimist": ">=1.2.3",
+    "minimist": ">=1.2.6",
     "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.7",
