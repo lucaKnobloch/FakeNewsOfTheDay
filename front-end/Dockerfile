@@ -7,7 +7,7 @@ COPY ./ .
 # builds the dist folder which can be deployed
 RUN npm run build
 
-FROM nginx as production-stage
+FROM nginx:stable as production-stage
 RUN mkdir /app
 # copies the dist folder of the upper process into the app folder
 COPY --from=build-stage /app/dist /app/
